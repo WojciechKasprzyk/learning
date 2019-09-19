@@ -1,0 +1,22 @@
+<div 
+>
+    <div class="header">
+        <div>id</div>
+        <div>name</div>
+        <div>description</div>
+    </div>
+    <div 
+    class='list'
+    infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+(scrolled)="onScroll()"
+    >
+        <div class='list-item' *ngFor="let item of items"> 
+                <div>{{item.id}}</div>
+                <div>{{item.name}}</div>
+                <div>{{item.description}}</div>
+        </div>
+    </div>
+</div>
