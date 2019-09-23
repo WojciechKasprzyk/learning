@@ -1,23 +1,20 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ItemsService {
-  take = 30;
   skip = 0;
   constructor() { }
 
-  async getItems() {
+  async getItems(take = 30) {
     const items = [];
-    for (let i = this.skip; i < this.skip + this.take; i++) {
+    for (let i = this.skip; i < this.skip + take; i++) {
       items.push({
         id: i,
         name: 'name' + i,
         description: `product ${i} description`
       })
     }
-    this.skip += this.take;
+    this.skip += take;
     return Promise.resolve(items);
   }
 }

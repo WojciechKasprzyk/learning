@@ -1,0 +1,7 @@
+<cdk-virtual-scroll-viewport itemSize="30">
+        <div class='list-item' *cdkVirtualFor="let item of items"> 
+                <div>{{item.id}}</div>
+                <div>{{item.name}}</div>
+                <div>{{item.description}}</div>
+        </div>
+</cdk-virtual-scroll-viewport>
